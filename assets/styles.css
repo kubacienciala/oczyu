@@ -95,6 +95,10 @@ p { margin: 0 0 1em; }
 .btn.soon { background: var(--ink); box-shadow: 0 6px 0 #141c38; cursor: default; }
 .cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 8px; }
 .cta small { color: var(--ink); font-size: 16px; }
+.stores { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-top: 22px; }
+.stores-label { font-size: 16px; color: var(--ink); }
+.stores-badges { display: flex; flex-wrap: wrap; gap: 10px; }
+.stores-badges img { height: 44px; width: auto; }
 
 /* Sekcje */
 section { padding: 64px 0; }
