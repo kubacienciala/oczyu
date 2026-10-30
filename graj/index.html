@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="utf-8" />
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -25,13 +25,36 @@
     </style>
   <meta name="theme-color" content="#8fdcff">
 <meta name="description" content="Darmowe demo gry ortograficznej z Sówką Ósią: ó czy u. Pełna wersja w App Store.">
-<link rel="icon" href="/oczyu/graj/favicon.ico"/></head>
+<link rel="icon" href="/oczyu/graj/favicon.ico"/>
+<link rel="preload" href="/oczyu/graj/canvaskit.wasm" as="fetch" type="application/wasm" crossorigin="anonymous">
+<link rel="preload" href="/oczyu/graj/sowka.webp" as="image">
+<style>
+#oczyu-splash{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:linear-gradient(#8fdcff,#d2f3ff);font-family:system-ui,-apple-system,sans-serif;color:#23305c;z-index:9999;transition:opacity .3s}
+#oczyu-splash img{width:150px;height:150px;animation:oczyu-bob 1.6s ease-in-out infinite}
+#oczyu-splash .t{font-size:20px;font-weight:700;text-align:center;padding:0 24px}
+#oczyu-splash .bar{width:200px;height:12px;border-radius:6px;background:rgba(35,48,92,.15);overflow:hidden}
+#oczyu-splash .bar i{display:block;height:100%;width:40%;border-radius:6px;background:#2dcb70;animation:oczyu-load 1.2s ease-in-out infinite}
+@keyframes oczyu-bob{50%{transform:translateY(-10px)}}
+@keyframes oczyu-load{0%{transform:translateX(-100%)}100%{transform:translateX(250%)}}
+@media (prefers-reduced-motion:reduce){#oczyu-splash img,#oczyu-splash .bar i{animation:none}}
+</style>
+</head>
 
   <body>
     <!-- Use static rendering with Expo Router to support running without JavaScript. -->
     <noscript> You need to enable JavaScript to run this app. </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
-  <script src="/oczyu/graj/_expo/static/js/web/__expo-metro-runtime-8c088df87a31e4e6accd81c554ec290d.js" defer></script><script src="/oczyu/graj/_expo/static/js/web/__common-df87e1459740115524f482a101742233.js" defer></script><script src="/oczyu/graj/_expo/static/js/web/index-d388e86c53210641474484e905473788.js" defer></script>
+<div id="oczyu-splash" role="status" aria-live="polite">
+  <img src="/oczyu/graj/sowka.webp" alt="" width="150" height="150">
+  <div class="t" id="oczyu-splash-text">Sówka już leci…</div>
+  <div class="bar" aria-hidden="true"><i></i></div>
+</div>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () { navigator.serviceWorker.register('/oczyu/graj/sw.js', { scope: '/oczyu/graj/' }).catch(function () {}); });
+}
+</script>
+  <script src="/oczyu/graj/_expo/static/js/web/__expo-metro-runtime-8c088df87a31e4e6accd81c554ec290d.js" defer></script><script src="/oczyu/graj/_expo/static/js/web/__common-df87e1459740115524f482a101742233.js" defer></script><script src="/oczyu/graj/_expo/static/js/web/index-ca615f772b1f00fb75a86337cbed8689.js" defer></script>
 </body>
 </html>
