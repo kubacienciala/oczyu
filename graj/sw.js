@@ -28,8 +28,8 @@ self.addEventListener('fetch', (e) => {
       ),
     );
   } else if (req.mode === 'navigate') {
-    // Strona: najpierw sieć (nowa wersja demo); gdy sieć milczy dłużej niż 3 s albo jej nie ma – ostatnia zapisana.
-    const net = fetch(req).then((res) => { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)); return res; });
+    // Strona: najpierw sieć z pominięciem 10-minutowego cache GitHub Pages (nowa wersja demo od razu); gdy sieć milczy dłużej niż 3 s albo jej nie ma – ostatnia zapisana.
+    const net = fetch(req, { cache: 'no-cache' }).then((res) => { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)); return res; });
     const slow = new Promise((ok) => setTimeout(ok, 3000)).then(() => caches.match(req));
     e.respondWith(
       Promise.race([net, slow.then((hit) => hit || net)]).catch(() => caches.match(req).then((hit) => hit || net)),
