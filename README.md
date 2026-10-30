@@ -1,6 +1,6 @@
 # Ó czy U? – strona gry
 
-Statyczna strona na GitHub Pages: https://kubacienciala.github.io/oczyu/
+Statyczna strona na GitHub Pages: https://oczyu.pl/
 
 - `index.html` – strona główna (Marketing URL w App Store Connect)
 - `polityka-prywatnosci.html` – polityka prywatności (Privacy Policy URL, link w aplikacji)
