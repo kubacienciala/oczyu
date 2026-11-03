@@ -98,7 +98,9 @@ p { margin: 0 0 1em; }
 .stores { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-top: 22px; }
 .stores-label { font-size: 16px; color: var(--ink); }
 .stores-badges { display: flex; flex-wrap: wrap; gap: 10px; }
-.stores-badges img { height: 44px; width: auto; }
+.stores-badges img { height: 44px; width: auto; display: block; }
+.stores-badges .soon { position: relative; opacity: .55; }
+.stores-badges .soon small { position: absolute; left: 0; right: 0; bottom: -18px; text-align: center; font-size: 12px; color: var(--ink); }
 
 /* Sekcje */
 section { padding: 64px 0; }
