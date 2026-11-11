@@ -12,6 +12,7 @@
     var ref = (document.referrer || '').toLowerCase();
     if (/facebook\.com|fb\.com|messenger\.com/.test(ref)) z = 'fb';
     else if (/instagram\.com/.test(ref)) z = 'ig';
+    else if (/pinterest\.|pin\.it/.test(ref)) z = 'pin';
     else if (/google\./.test(ref)) z = 'google';
   }
   if (z) z = z.toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 40);
