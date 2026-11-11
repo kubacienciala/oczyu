@@ -221,3 +221,7 @@ footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
   .sheet-hero-grid, .sheet-cols { grid-template-columns: 1fr; }
   .sheet-preview { max-width: 280px; margin: 0 auto; }
 }
+.pin-card { display: grid; grid-template-columns: 180px 1fr; gap: 24px; align-items: center; margin-bottom: 20px; }
+.pin-card img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--edge); }
+.pin-card p { color: var(--ink-soft); margin: 0; }
+@media (max-width: 520px) { .pin-card { grid-template-columns: 110px 1fr; gap: 16px; } }
