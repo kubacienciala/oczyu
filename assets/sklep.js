@@ -7,6 +7,13 @@
   try {
     z = new URLSearchParams(location.search).get('z');
   } catch (e) {}
+  // Stare posty bez ?z – rozpoznajemy po stronie, z której ktoś przyszedł.
+  if (!z) {
+    var ref = (document.referrer || '').toLowerCase();
+    if (/facebook\.com|fb\.com|messenger\.com/.test(ref)) z = 'fb';
+    else if (/instagram\.com/.test(ref)) z = 'ig';
+    else if (/google\./.test(ref)) z = 'google';
+  }
   if (z) z = z.toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 40);
   try {
     if (z) sessionStorage.setItem('oczyu-z', z);
