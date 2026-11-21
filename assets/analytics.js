@@ -1,7 +1,18 @@
-/* Ó czy U? – Google Analytics 4 tylko za zgodą.
-   Dopóki odwiedzający nie kliknie „Zgadzam się”, nie ładujemy żadnego kodu Google
-   i nie zapisujemy cookies. Wybór trzymamy w localStorage („oczyu-zgoda”: tak/nie).
+/* Ó czy U? – statystyki strony.
+   1. GoatCounter (oczyu.goatcounter.com) – zawsze: bez cookies i bez danych osobowych,
+      liczy wszystkie odwiedziny.
+   2. Google Analytics 4 – tylko za zgodą. Dopóki odwiedzający nie kliknie „Zgadzam się”,
+      nie ładujemy żadnego kodu Google i nie zapisujemy cookies.
+      Wybór trzymamy w localStorage („oczyu-zgoda”: tak/nie).
    Demo gry (/graj/) nie ładuje tego pliku – tam bawią się dzieci. */
+(function () {
+  var gc = document.createElement('script');
+  gc.async = true;
+  gc.src = 'https://gc.zgo.at/count.js';
+  gc.setAttribute('data-goatcounter', 'https://oczyu.goatcounter.com/count');
+  document.head.appendChild(gc);
+})();
+
 (function () {
   var GA_ID = 'G-8MTG214NN2';
   var KEY = 'oczyu-zgoda';
