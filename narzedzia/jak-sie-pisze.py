@@ -107,6 +107,7 @@ HEAD = '''<!doctype html>
   <link rel="icon" href="../assets/favicon.png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <link rel="stylesheet" href="../assets/styles.css">
+  <script src="/assets/analytics.js" defer></script>
 {jsonld}</head>
 <body>
   <header class="top">
